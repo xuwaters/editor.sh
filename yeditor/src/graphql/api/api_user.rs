@@ -199,6 +199,11 @@ fn mutation_user_register(
     let ctx = executor.context();
     info!("user_register req = {:?}, session = {:?}", req, ctx.session);
 
+    return Err(FieldError::new(
+        "unsupported register method",
+        graphql_value!({"register": "unsupported_register"}),
+    ));
+
     validate_email(req.email.as_str())?;
     validate_user_name(req.name.as_str())?;
     validate_user_password(req.password.as_str())?;
@@ -218,6 +223,11 @@ fn mutation_user_login(
 ) -> FieldResult<ApiLoggedInUser> {
     let ctx = executor.context();
     info!("user_login req = {:?}, session = {:?}", req, ctx.session);
+
+    return Err(FieldError::new(
+        "unsupported login method",
+        graphql_value!({"login": "unsupported_login"}),
+    ));
 
     validate_email(req.email.as_str())?;
     validate_user_password(req.password.as_str())?;
