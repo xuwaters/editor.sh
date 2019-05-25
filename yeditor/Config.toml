@@ -1,0 +1,65 @@
+
+[server]
+bind_url = "http://127.0.0.1:4000"
+tls_cert = ""
+tls_key = ""
+
+github_auth_url = "https://github.com/login/oauth/authorize"
+github_token_url = "https://github.com/login/oauth/access_token"
+# client_id and secret would be overriden by .env
+github_client_id = ""
+github_client_secret = ""
+
+
+[postgres]
+username = "postgres"
+password = "postgres"
+host = "localhost"
+database = "yeditor"
+
+[log]
+level = "debug"
+
+[room]
+runner_service_url = "http://127.0.0.1:4500/ws/{room_key}"
+cache_lines = 30
+close_delay_ms = 10000
+client_keep_alive_ms = 10000
+client_timeout_ms = 15000
+auto_save_seconds = 300
+agent_keep_alive_seconds = 3
+max_pads_per_user = 10
+
+[languages]
+bash = { ui = "Bash", editor = "bash" }
+c = { ui = "C", editor = "c" }
+csharp = { ui = "CSharp", editor = "csharp" }
+cpp = { ui = "Cpp", editor = "cpp" }
+clojure = { ui = "Clojure", editor = "clojure" }
+coffeescript = { ui = "CoffeeScript", editor = "coffeescript" }
+elixir = { ui = "Elixir", editor = "elixir" }
+erlang = { ui = "Erlang", editor = "erlang" }
+fsharp = { ui = "FSharp", editor = "fsharp" }
+go = { ui = "Go", editor = "go" }
+haskell = { ui = "Haskell", editor = "haskell" }
+java = { ui = "Java", editor = "java" }
+javascript = { ui = "JavaScript", editor = "javascript" }
+kotlin = { ui = "Kotlin", editor = "kotlin" }
+markdown = { ui = "Markdown", editor = "markdown" }
+mysql = { ui = "MySQL", editor = "mysql" }
+ocaml = { ui = "OCaml", editor = "ocaml" }
+objc = { ui = "Objective-C", editor = "objective-c" }
+php = { ui = "PHP", editor = "php" }
+perl = { ui = "Perl", editor = "perl" }
+perl6 = { ui = "Perl 6", editor = "perl" }
+plaintext = { ui = "Plain Text", editor = "plaintext" }
+postgres = { ui = "PostgreSQL", editor = "postgres" }
+python2 = { ui = "Python 2", editor = "python" }
+python3 = { ui = "Python 3", editor = "python" }
+r = { ui = "R", editor = "r" }
+ruby = { ui = "Ruby", editor = "ruby" }
+rust = { ui = "Rust", editor = "rust" }
+scala = { ui = "Scala", editor = "scala" }
+swift = { ui = "Swift 5", editor = "swift" }
+typescript = { ui = "Typescript", editor = "typescript" }
+vb = { ui = "Visual Basic", editor = "vb" }

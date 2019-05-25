@@ -1,0 +1,6 @@
+<h2>
+  Edit Question
+</h2>
+
+<app-question-editor [enableDeleteButton]="true" [question]="question$ | async" (questionSave)="onSave($event)"
+  (questionDelete)="onDelete($event)"></app-question-editor>

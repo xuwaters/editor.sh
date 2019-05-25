@@ -1,0 +1,13 @@
+{
+  "/graphql": {
+    "target": "http://127.0.0.1:4000",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/realtime": {
+    "target": "http://127.0.0.1:4000",
+    "secure": false,
+    "logLevel": "debug",
+    "ws": true
+  }
+}

@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayoutAlign="space-between stretch" style="padding: 20px;">
+
+  <mat-list *ngFor="let group of footerLinks">
+    <mat-list-item *ngFor="let item of group">
+      <a mat-button *ngIf="item.routerLink" [routerLink]="item.routerLink">{{item.text}}</a>
+      <a mat-button *ngIf="item.link" [href]="item.link">{{item.text}}</a>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item>
+      &copy; {{copyRight}}
+    </mat-list-item>
+    <!--
+    <mat-list-item>
+      Questions? <a mat-button [href]="contact.link">{{contact.text}}</a>
+    </mat-list-item>
+    -->
+  </mat-list>
+
+</div>

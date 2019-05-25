@@ -1,0 +1,46 @@
+<div class="question-edit" fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="question-header" fxLayout="row">
+    <div fxFlex="80%" fxLayout="row" fxLayoutGap="20px">
+      <div fxFlex="80%" fxLayout="column">
+        <!-- <label>Title</label> -->
+        <mat-form-field>
+          <input matInput name="title" placeholder="Title" [(ngModel)]="questionValue.title">
+        </mat-form-field>
+      </div>
+      <div fxFlex="20%" fxLayout="column">
+        <!-- <label>Language</label> -->
+        <app-language-selector placeholder="Language" (languageChanged)="onLanguageChanged($event)"></app-language-selector>
+      </div>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+  <div class="question-description" fxLayout="row">
+    <div fxFlex="80%" fxLayout="column">
+      <label>Notes for self</label>
+      <div class="editor">
+        <app-monaco-editor #descriptionEditor (editorDidMount)="onDescriptionEditorDidMount($event)" [options]="descriptionEditorOptions"
+          [ngStyle]="descriptionEditorStyle" [(ngModel)]="questionValue.notes"></app-monaco-editor>
+      </div>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+  <div class="question-content" fxLayout="row">
+    <div fxFlex="80%" fxLayout="column">
+      <label>Content</label>
+      <div class="editor">
+        <app-monaco-editor #contentEditor (editorDidMount)="onContentEditorDidMount($event)" [options]="contentEditorOptions"
+          [ngStyle]="contentEditorStyle" [(ngModel)]="questionValue.content"></app-monaco-editor>
+      </div>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+  <div class="question-actions" fxLayout="row">
+    <div fxFlex="80%" fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+      <ng-container *ngIf="enableDeleteButton">
+        <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+      </ng-container>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+</div>

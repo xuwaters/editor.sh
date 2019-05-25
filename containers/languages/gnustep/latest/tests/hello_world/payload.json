@@ -1,0 +1,7 @@
+{
+  "language": "objc",
+  "files": [{
+    "name": "main.m",
+    "content": "#import <Foundation/Foundation.h>\n    int main () {\n      @autoreleasepool {\n        NSLog(@\"Hello world!\");\n      }\n      return 0;\n    }"
+  }]
+}

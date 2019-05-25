@@ -1,0 +1,28 @@
+<div class="pad-filter-container" fxLayout="row" fxLayoutGap="10px">
+
+  <span fxFlex="grow">
+    <mat-form-field>
+      <input matInput type="search" placeholder="Search title" [(ngModel)]="currentSearch"
+        (ngModelChange)="onFilterSearchChanged($event)">
+    </mat-form-field>
+  </span>
+
+  <!--
+  <mat-form-field>
+    <mat-select placeholder="Pad status" [(ngModel)]="currentStatus" (selectionChange)="onFilterPadStatusChanged($event)">
+      <mat-option *ngFor="let item of statusList" [value]="item.value">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  -->
+
+  <mat-form-field>
+    <mat-select placeholder="Create time" [(ngModel)]="currentCreateDays" (selectionChange)="onFilterCreateTimeChanged($event)">
+      <mat-option *ngFor="let item of createDaysList" [value]="item.value">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>

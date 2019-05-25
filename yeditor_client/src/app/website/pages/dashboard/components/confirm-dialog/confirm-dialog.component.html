@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="container-content" fxLayout="column" fxLayoutGap="10px">
+    <h2 fxFlex="10%" class="title">
+      {{title}}
+    </h2>
+    <div fxFlex="grow" class="content">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <span fxFlex="10%"></span>
+        <span fxFlex="grow">
+          {{content}}
+        </span>
+        <span fxFlex="10%"></span>
+      </div>
+    </div>
+    <div fxFlex class="actions">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <span fxFlex="grow"></span>
+        <button fxFlex mat-button mat-dialog-close>{{cancelButton}}</button>
+        <button fxFlex mat-button [color]="okColor" [mat-dialog-close]="payload" cdkFocusInitial>{{okButton}}</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+:host {
+  color: #505050;
+  h4:first-child {
+    margin-top: 0;
+  }
+  h4 {
+    color: #7a8b99;
+    font-size: 1.4rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: normal;
+        padding: 8px 0;
+        text-decoration: none;
+        width: 70%;
+        color: inherit;
+      }
+      a::before {
+        display: inline-block;
+        background-color: transparent;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 22px;
+        margin-right: 10px;
+        content: '\00a0';
+      }
+      a.pads:before {
+        background-image: url('/assets/icons/dashboard-pads.svg');
+      }
+      a.questions:before {
+        background-image: url('/assets/icons/dashboard-questions.svg');
+      }
+      a.databases:before {
+        background-image: url('/assets/icons/dashboard-databases.svg');
+      }
+      a.usage:before {
+        background-image: url('/assets/icons/dashboard-usage.svg');
+      }
+      a.settings:before {
+        background-image: url('/assets/icons/dashboard-settings.svg');
+      }
+      a.billing:before {
+        background-image: url('/assets/icons/dashboard-billing.svg');
+      }
+      a.members:before {
+        background-image: url('/assets/icons/dashboard-members.svg');
+      }
+    }
+  }
+}

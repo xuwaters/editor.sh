@@ -1,0 +1,203 @@
+# docker
+docker:
+  memory_mb: 512
+  cpu_period_ms: 100
+  cpu_quota_ms: 80
+  code_timeout_ms: 30000
+
+# languages
+languages:
+  - name: bash
+    ext: .sh
+    image: "yscript/bash:latest"
+    repl: { cmd: [/bin/bash] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: c
+    ext: .c
+    image: "yscript/clang:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: csharp
+    ext: .cs
+    image: "yscript/mono:latest"
+    repl: { cmd: [csharp] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: cpp
+    ext: .cpp
+    image: "yscript/clang:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: clojure
+    ext: .clj
+    image: "yscript/clojure:latest"
+    repl: { cmd: [bash, -c, "sleep 1; rlwrap clojure"] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: clojure
+    ext: .clj
+    image: "yscript/clojure:latest"
+    repl: { cmd: [clojure] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: coffeescript
+    ext: .coffee
+    image: "yscript/coffeescript:latest"
+    repl: { cmd: [coffee] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: crystal
+    ext: .cr
+    image: "yscript/crystal:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>]}
+
+  - name: elixir
+    ext: .ex
+    image: "yscript/elixir:latest"
+    repl: { cmd: [iex] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: erlang
+    ext: .erl
+    image: "yscript/erlang:latest"
+    repl: { cmd: [erl] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: fsharp
+    ext: .fs
+    image: "yscript/mono:latest"
+    repl: { cmd: [fsharpi] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: go
+    ext: .go
+    image: "yscript/golang:latest"
+    repl: { cmd: [bash, -c, "sleep 1; rlwrap gomacro"] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: haskell
+    ext: .hs
+    image: "yscript/haskell:latest"
+    repl: { cmd: [ghci] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: java
+    ext: .java
+    image: "yscript/java:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: javascript
+    ext: .js
+    image: "yscript/javascript:latest"
+    repl: { cmd: [node] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: kotlin
+    ext: .kt
+    image: "yscript/kotlin:latest"
+    repl: { cmd: [kotlinc] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: markdown
+    ext: .md
+    image: "yscript/markdown:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: mysql
+    ext: .sql
+    image: "yscript/mysql:latest"
+    service: { cmd: [mysqld] }
+    repl: { cmd: [mysql, -u, root, -h, <YE_SERVICE_NAME>] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>], env: [MYSQL_HOST=<YE_SERVICE_NAME>] }
+
+  - name: ocaml
+    ext: .ml
+    image: "yscript/ocaml:latest"
+    repl: { cmd: [ocaml] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: objc
+    ext: .m
+    image: "yscript/gnustep:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: perl
+    ext: .pl
+    image: "yscript/perl:latest"
+    repl: { cmd: [bash, -c, "sleep 1; perli"] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: perl6
+    ext: .pl
+    image: "yscript/perl6:latest"
+    repl: { cmd: [perl6, --repl-mode=interactive] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: php
+    ext: .php
+    image: "yscript/php:latest"
+    repl: { cmd: [php, -a] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: plaintext
+    ext: .txt
+
+  - name: postgres
+    ext: .sql
+    image: "yscript/postgres:latest"
+    service: { cmd: [postgres] }
+    repl: { cmd: [psql, -U, postgres, -h, <YE_SERVICE_NAME>] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>], env: [POSTGRES_HOST=<YE_SERVICE_NAME>]  }
+
+  - name: python2
+    ext: .py
+    image: "yscript/python2:latest"
+    repl: { cmd: [python2] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: python3
+    ext: .py
+    image: "yscript/python3:latest"
+    repl: { cmd: [python3] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: r
+    ext: .r
+    image: "yscript/r:latest"
+    repl: { cmd: [R] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: ruby
+    ext: .rb
+    image: "yscript/ruby:latest"
+    repl: { cmd: [irb] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: rust
+    ext: .rs
+    image: "yscript/rust:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: scala
+    ext: .scala
+    image: "yscript/scala:latest"
+    repl: { cmd: [scala] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: swift
+    ext: .swift
+    image: "yscript/swift:latest"
+    # repl: { cmd: [swift] } # TODO: --security-opt, --cap-add=sys_ptrace
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: typescript
+    ext: .ts
+    image: "yscript/typescript:latest"
+    repl: { cmd: [ts-node] }
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }
+
+  - name: vb
+    ext: .vb
+    image: "yscript/mono:latest"
+    run: { cmd: [yscript, -f, <YE_REQUEST_FILE>] }

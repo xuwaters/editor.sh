@@ -1,0 +1,7 @@
+<div class="container">
+  <ul class="dropdown-menu dropdown-inverse">
+    <li *ngFor="let lang of languages" (click)="onSelectLanguage(lang)">
+      <a href="javascript:void(0)" (click)="onShowLanguageInfo(lang, $event)">Info</a>      {{lang.name}}
+    </li>
+  </ul>
+</div>

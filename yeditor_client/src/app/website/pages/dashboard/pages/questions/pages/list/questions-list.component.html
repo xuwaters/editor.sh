@@ -1,0 +1,15 @@
+<h2>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <span>Questions</span>
+    <a mat-raised-button color="primary" routerLink="/dashboard/questions/create">Write New Question</a>
+  </div>
+</h2>
+
+<mat-drawer-container>
+  <mat-drawer mode="side" opened="true">
+    <app-questions-sidebar></app-questions-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-question-preview (newQuestion)="onCreateNewQuestion()" (quitPreview)="onQuitPreview()"></app-question-preview>
+  </mat-drawer-content>
+</mat-drawer-container>

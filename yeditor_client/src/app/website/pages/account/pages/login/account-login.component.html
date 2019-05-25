@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlex>
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Email" [(ngModel)]="userEmail">
+      <mat-hint *ngIf="(errorEmail$ | async)">{{ errorEmail$ | async }}</mat-hint>
+    </mat-form-field>
+  </div>
+  <div fxFlex>
+    <mat-form-field class="form-field">
+      <input matInput type="password" placeholder="Password" [(ngModel)]="userPassword">
+      <mat-hint *ngIf="(errorPassword$ | async)">{{ errorPassword$ | async }}</mat-hint>
+    </mat-form-field>
+  </div>
+  <div fxFlex>
+    <button mat-raised-button color="primary" [disabled]="pending$ | async" (click)="onLogin()"> LOGIN </button>
+  </div>
+</div>
+
+<app-account-links [showLogin]="false"></app-account-links>

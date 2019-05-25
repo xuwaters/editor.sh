@@ -1,0 +1,20 @@
+<div class="invite-dialog-panel">
+  <h4>Send Email Invite</h4>
+  <p>We'll email the recipient directly with a link from {{config.websiteName}}, so you don't have
+    to give away your email address.</p>
+  <div id="email-invite-form">
+    <input id="invite-email" placeholder="Recipient's email address">
+    <button id="send-invite">Send</button>
+  </div>
+  <div class="horizontal-separator">or</div>
+  <h4>Phone-Friendly Temporary Link</h4>
+  <p>
+    Read this <strong>temporary</strong> shortlink out loud to invite someone to
+    this pad. If you need a permanent link to email for a future interview, use the
+    <strong>full URL</strong> in your address bar.
+  </p>
+  <div id="short-link">
+    <span>https://</span>{{config.websiteShortHost}}/{{shortLinkId}}
+  </div>
+  <span class="caret"></span>
+</div>

@@ -1,0 +1,44 @@
+:host {
+  .table-container {
+    padding: 1px;
+    border: 1px solid #c7d1d9;
+    border-radius: 4px;
+  }
+
+  mat-table {
+    overflow: auto;
+    height: 300px;
+  }
+  mat-header-cell {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #505050;
+  }
+  mat-header-row {
+    min-height: 40px;
+  }
+  .mat-raised-button {
+    font-size: 1.4rem;
+  }
+  .column-common {
+    padding: 0 8px 0 8px;
+  }
+  .column-title {
+    flex: 0 0 283px;
+  }
+  .column-status {
+    flex: 0 0 58px;
+  }
+  .column-creator {
+    flex: 0 0 70px;
+  }
+  .column-time {
+    flex: 0 0 120px;
+  }
+  .column-language {
+    flex: 0 0 90px;
+  }
+  .column-action {
+    flex: 0 0 120px;
+  }
+}

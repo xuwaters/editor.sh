@@ -1,0 +1,51 @@
+:host {
+  font-size: 1.6rem;
+  color: #4b555e;
+  .login-page {
+    background-color: #f2f5f7;
+    min-height: 100vh;
+  }
+  .login-header {
+    background-color: #fff;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  .login-logo {
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+    display: block;
+  }
+  .login-container {
+    margin: 0 auto;
+    width: 350px;
+    padding-top: 30px;
+     ::ng-deep .form-field {
+      width: 350px;
+      margin-bottom: 15px;
+    }
+     ::ng-deep button {
+      padding: 4px 10px;
+      margin-top: 15px;
+      min-width: 200px;
+      letter-spacing: 2px;
+    }
+     ::ng-deep .login-links {
+      margin-top: 50px;
+      padding-left: 15px;
+      padding-bottom: 50px;
+    }
+     ::ng-deep a {
+      color: #428bca;
+      text-decoration: none;
+    }
+     ::ng-deep h2 {
+      margin: 0;
+      text-align: center;
+    }
+     ::ng-deep p {
+      line-height: 1.6;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+$border-color: #c7d1d9;
+:host {
+  // left side drawer
+  mat-drawer-container {
+    height: 600px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    mat-drawer {
+      width: 320px;
+      border-right: 1px solid $border-color;
+    }
+    mat-drawer-content {
+      background-color: #fff;
+    }
+  }
+}

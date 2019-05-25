@@ -1,0 +1,7 @@
+{
+  "language": "vb",
+  "files": [{
+    "name": "main.vb",
+    "content": "Module HelloWorld\n    Sub Main()\n        System.Console.WriteLine(\"Hello World!\")\n    End Sub\n  End Module"
+  }]
+}

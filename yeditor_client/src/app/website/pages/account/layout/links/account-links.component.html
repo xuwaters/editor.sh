@@ -1,0 +1,7 @@
+<div class="login-links">
+  <p *ngIf="showLogin">Already a member? <a routerLink="/account/login">Login here.</a></p>
+  <p *ngIf="showRegister">Not a member yet? <a routerLink="/account/register">Register for a free trial.</a></p>
+  <p *ngIf="showPasswordReset"><a routerLink="/account/password-reset">Forget your password?</a></p>
+  <p *ngIf="showConfirmation"><a routerLink="/account/confirmation">Didn't receive confirmation instructions?</a></p>
+  <p *ngIf="showUnlock"><a routerLink="/account/unlock">Didn't receive unlock instructions?</a></p>
+</div>

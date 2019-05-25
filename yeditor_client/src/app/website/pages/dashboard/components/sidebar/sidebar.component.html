@@ -1,0 +1,21 @@
+<h4>{{planName}}</h4>
+<ul>
+  <li *ngFor="let item of sidebarLinks">
+    <a [ngClass]="item.class" [routerLink]="item.routerLink">{{item.text}}</a>
+  </li>
+</ul>
+<ul style="margin-top: 50px;">
+  <li *ngFor="let item of membersLinks">
+    <a [ngClass]="item.class" [routerLink]="item.routerLink">{{item.text}}</a>
+  </li>
+</ul>
+<div fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row">
+    <button fxFlex="80%" mat-raised-button color="primary" (click)="onCreatePad()">Create Pad</button>
+  </div>
+  <!--
+  <div fxLayout="row">
+    <button fxFlex="80%" mat-raised-button color="accent" (click)="onTrySandbox()">Try Sandbox</button>
+  </div>
+  -->
+</div>

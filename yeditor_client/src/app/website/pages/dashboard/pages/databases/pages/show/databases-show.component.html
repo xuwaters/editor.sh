@@ -1,0 +1,21 @@
+<h2>
+  Database: {{databaseTitle$ | async}}
+</h2>
+<p></p>
+<p>
+  <a href="javascript:void(0);" (click)="onEditDatabase()">edit this database</a>.
+</p>
+<p>Database Summary:</p>
+<pre>
+{{databaseSummary$ | async}}
+</pre>
+
+<p>Database Description:</p>
+<pre>
+{{databaseDescription$ | async}}
+</pre>
+
+<p>Database Script:</p>
+<pre>
+{{databaseScript$ | async}}
+</pre>

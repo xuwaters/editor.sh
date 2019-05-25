@@ -1,0 +1,32 @@
+:host {
+  div.container {
+    height: 100vh;
+  }
+  .split-pane-container {
+    width: 100%;
+  }
+  app-split-pane {
+    background-color: #1e1e1e;
+  }
+  app-monaco-editor {
+    min-height: 100%;
+    min-width: 100%;
+  }
+  app-xterm {
+    min-height: 100%;
+  }
+  .area-header {
+    height: 50px;
+  }
+  .area-content {
+    height: calc(100% - 50px);
+  }
+  .area-monaco-editor-container {
+    padding: 0 0 4px 0;
+    height: calc(100% - 4px);
+  }
+  .area-xterm-container {
+    padding: 0 0 2px 6px;
+    height: calc(100% - 2px);
+  }
+}

@@ -1,0 +1,31 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlex>
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Email" [(ngModel)]="userEmail">
+      <mat-hint *ngIf="errorEmail$ | async">{{ errorEmail$ | async }}</mat-hint>
+    </mat-form-field>
+  </div>
+  <div fxFlex>
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Name" [(ngModel)]="userName">
+      <mat-hint *ngIf="(errorName$ | async)">{{ errorName$ | async }}</mat-hint>
+    </mat-form-field>
+  </div>
+  <div fxFlex>
+    <mat-form-field class="form-field">
+      <input matInput type="password" placeholder="Password (5+ characters)" [(ngModel)]="userPassword">
+      <mat-hint *ngIf="(errorPassword$ | async)">{{ errorPassword$ | async }}</mat-hint>
+    </mat-form-field>
+  </div>
+  <div fxFlex>
+    <mat-checkbox class="form-field" [(ngModel)]="enableSendEmails">
+      Send me (infrequent) emails about important product announcements.
+    </mat-checkbox>
+  </div>
+  <div fxFlex>
+    <button mat-raised-button color="primary" [disabled]="pending$ | async" (click)="onRegister()"> REGISTER </button>
+    <p>Comes with a <strong>7-day free trial.</strong></p>
+  </div>
+</div>
+
+<app-account-links [showRegister]="false" [showPasswordReset]="false"></app-account-links>

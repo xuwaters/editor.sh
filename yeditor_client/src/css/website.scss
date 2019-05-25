@@ -1,0 +1,67 @@
+@import "./website-font.scss";
+@import "./website-mat-icon.scss";
+
+:root {
+  font-family: Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+.mat-button {
+  font-size: 1.6rem;
+  color: #4b555e;
+}
+
+.mat-raised-button {
+  font-size: 1.6rem;
+  color: #4b555e;
+}
+
+.mat-form-field {
+  font-size: 1.6rem;
+}
+
+h1 h2 h3 h4 h5 {
+  color: #2d353c;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2.0rem;
+}
+
+h4 {
+  font-size: 2.0rem;
+}
+
+body {
+  margin: 0;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  background-color: transparent;
+}
+
+pre, code {
+  font-family: 'Roboto Mono', Menlo, 'Ubuntu Mono', Monaco, Consolas, 'source-code-pro', monospace;
+}
+
+
+// scrollbar style
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+}

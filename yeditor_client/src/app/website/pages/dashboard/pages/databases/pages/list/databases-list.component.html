@@ -1,0 +1,12 @@
+<h2>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <span>Custom Databases</span>
+    <a mat-raised-button color="primary" routerLink="/dashboard/databases/create">New Custom Database</a>
+  </div>
+</h2>
+<p>
+</p>
+
+<div class="table-container">
+  <app-database-table [data]="databaseList$ | async" (action)="onDatabaseAction($event)"></app-database-table>
+</div>

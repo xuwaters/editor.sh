@@ -1,0 +1,27 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex="8%"></div>
+  <div fxFlex="8%" fxFlexOrder="3"></div>
+  <div fxFlex="84%" class="main-row">
+    <app-website-header></app-website-header>
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex="10%"></div>
+  <div fxFlex="10%" fxFlexOrder="3"></div>
+  <div fxFlex class="main-content main-row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div style="padding-top: 20px;">
+  <mat-divider></mat-divider>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex="10%"></div>
+  <div fxFlex="10%" fxFlexOrder="3"></div>
+  <div fxFlex="80%" class="main-row">
+    <app-website-footer></app-website-footer>
+  </div>
+</div>

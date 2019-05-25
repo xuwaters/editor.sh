@@ -1,0 +1,10 @@
+:host {
+  ::ng-deep .mat-checkbox-label {
+    font-size: 1.4rem;
+    white-space: normal;
+  }
+
+  ::ng-deep .mat-hint {
+    color: #e74c3c;
+  }
+}

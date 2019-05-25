@@ -1,0 +1,32 @@
+<div>
+  <section>
+    <div fxLayout="column" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <span fxFlex="10%"></span>
+        <h1 fxFlex="80%">
+          {{config.websiteName}} is a live programming environment
+        </h1>
+        <span fxFlex="10%"></span>
+      </div>
+      <div fxFlex style="padding-top: 30px"></div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <!--
+        <button routerLink="/features" mat-raised-button color="primary">Learn more</button>
+        <span style="width: 30px;"></span>
+        -->
+        <ng-container *ngIf="loggedIn$ | async">
+          <button routerLink="/dashboard" mat-raised-button>Get Started</button>
+        </ng-container>
+        <ng-container *ngIf="!(loggedIn$ | async)">
+          <app-signin-github></app-signin-github>
+        </ng-container>
+
+
+      </div>
+      <div id="perspective" class="rotated">
+        <pre id="code-container" class=""></pre>
+      </div>
+    </div>
+  </section>
+
+</div>

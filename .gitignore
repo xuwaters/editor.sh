@@ -1,0 +1,15 @@
+/target
+**/*.rs.bk
+
+.idea
+.vscode
+.env
+todo
+todo.yml
+
+/yrunner/data
+__pycache__
+.temp
+
+/3rd
+/var

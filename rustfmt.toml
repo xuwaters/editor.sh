@@ -1,0 +1,5 @@
+tab_spaces=4
+hard_tabs=false
+
+fn_args_density="Vertical"
+merge_imports=true

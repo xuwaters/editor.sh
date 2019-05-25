@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <a routerLink="/"><img class="logo-image" src="assets/images/logo/logo.svg" width="110"></a>
+    <span class="spacer"></span>
+    <!-- <a routerLink="/features" mat-button>Features</a> -->
+    <!-- <a routerLink="/pricing" mat-button>Pricing</a> -->
+    <ng-container *ngIf="loggedIn$ | async">
+      <a routerLink="/dashboard" mat-button>Dashboard</a>
+      <a mat-button (click)="onLogout()">Logout</a>
+    </ng-container>
+    <ng-container *ngIf="!(loggedIn$ | async)">
+      <a routerLink="/account/login" mat-button>Login</a>
+      <!-- <a routerLink="/account/register" mat-button>Register</a> -->
+    </ng-container>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,57 @@
+<div class="table-container">
+  <mat-table #table [dataSource]="padsDataSource">
+
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef class="column-common column-title"> Title </mat-header-cell>
+      <mat-cell *matCellDef="let item" class="column-common column-title"> {{item.title}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef class="column-common column-status"> Status </mat-header-cell>
+      <mat-cell *matCellDef="let item" class="column-common column-status"> {{item.status}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="creator">
+      <mat-header-cell *matHeaderCellDef class="column-common column-creator"> Creator </mat-header-cell>
+      <mat-cell *matCellDef="let item" class="column-common column-creator"> {{item.creator}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="createTime">
+      <mat-header-cell *matHeaderCellDef class="column-common column-time"> Created </mat-header-cell>
+      <mat-cell *matCellDef="let item" class="column-common column-time"> {{item.createTime | amTimeAgo}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="language">
+      <mat-header-cell *matHeaderCellDef class="column-common column-language"> Language </mat-header-cell>
+      <mat-cell *matCellDef="let item" class="column-common column-language"> {{item.language}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let item">
+        <div fxLayout="row" fxLayoutGap="10px">
+          <span fxFlex="20px"></span>
+          <button *ngIf="item.status === 'unused'" mat-raised-button color="primary"
+            (click)="onAction('start', item)">Open</button>
+          <button *ngIf="item.status === 'progressing'" mat-raised-button color="primary"
+            (click)="onAction('edit', item)">Edit</button>
+          <!--
+          <button *ngIf="item.status !== 'ended'" mat-raised-button color="warn"
+            (click)="onAction('end', item)">End Now</button>
+          -->
+          <button *ngIf="item.status === 'ended'" mat-raised-button color="primary"
+            (click)="onAction('playback', item)">Playback</button>
+          <button *ngIf="item.status === 'ended'" mat-raised-button color="warn"
+            (click)="onAction('archive', item)">Delete</button>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="currentColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: currentColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [length]="dataLength" [pageSize]="dataPageSize" [pageSizeOptions]="dataPageSizeOptions"
+    (page)="onPage($event)">
+  </mat-paginator>
+</div>

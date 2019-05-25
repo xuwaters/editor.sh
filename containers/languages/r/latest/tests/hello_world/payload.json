@@ -1,0 +1,8 @@
+{
+  "language": "r",
+  "files": [{
+    "name": "main.r",
+    "content": "print(\"Hello World!\")"
+  }]
+}
+

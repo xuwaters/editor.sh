@@ -1,0 +1,50 @@
+<div class="question-edit" fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="question-header" fxLayout="row">
+    <div fxFlex="80%" fxLayout="row" fxLayoutGap="40px">
+      <div fxFlex="80%" fxLayout="column">
+        <!-- <label>Title</label> -->
+        <mat-form-field>
+          <input matInput name="title" placeholder="Title" [(ngModel)]="databaseValue.title">
+        </mat-form-field>
+      </div>
+      <div fxFlex="20%" fxLayout="column">
+        <mat-form-field>
+          <mat-select placeholder="Database Engine" [value]="databaseValue.engine" (selectionChange)="onDatabaseEngineChanged($event)">
+            <mat-option *ngFor="let engine of databaseEngines" [value]="engine">
+              {{engine.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+  <div class="question-description" fxLayout="row">
+    <div fxFlex="80%" fxLayout="column">
+      <label>Description</label>
+      <div class="editor">
+        <app-monaco-editor #descriptionEditor (editorDidMount)="onDescriptionEditorDidMount($event)"
+          [options]="descriptionEditorOptions" [ngStyle]="descriptionEditorStyle" [(ngModel)]="databaseValue.description">
+        </app-monaco-editor>
+      </div>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+  <div class="question-content" fxLayout="row">
+    <div fxFlex="80%" fxLayout="column">
+      <label>Content</label>
+      <div class="editor">
+        <app-monaco-editor #contentEditor (editorDidMount)="onContentEditorDidMount($event)"
+          [options]="contentEditorOptions" [ngStyle]="contentEditorStyle" [(ngModel)]="databaseValue.script">
+        </app-monaco-editor>
+      </div>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+  <div class="question-actions" fxLayout="row">
+    <div fxFlex="80%" fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+    </div>
+    <div fxFlex="20%"></div>
+  </div>
+</div>

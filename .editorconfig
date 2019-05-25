@@ -1,0 +1,12 @@
+root = true
+
+[*]
+indent_size = 2
+
+[*.{rs,py}]
+indent_size = 4
+indent_style = space
+
+[*.go]
+indent_size = 4
+indent_style = tab

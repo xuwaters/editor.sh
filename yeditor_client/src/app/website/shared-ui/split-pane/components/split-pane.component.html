@@ -1,0 +1,8 @@
+<ng-content></ng-content>
+<ng-template ngFor let-area [ngForOf]="displayedAreas" let-index="index" let-last="last">
+  <div appSplitGutter *ngIf="last === false" [order]="index*2+1" [direction]="direction"
+    [useTransition]="useTransition" [size]="gutterSize" [color]="gutterColor" [imageH]="gutterImageH"
+    [imageV]="gutterImageV" [disabled]="disabled" (mousedown)="startDragging($event, index*2+1, index+1)"
+    (touchstart)="startDragging($event, index*2+1, index+1)">
+  </div>
+</ng-template>

@@ -1,0 +1,38 @@
+<mat-table #table [dataSource]="databasesDataSource">
+
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef class="column-title"> Title </mat-header-cell>
+    <mat-cell *matCellDef="let item" class="column-title"> {{item.title}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef class="column-status"> Status </mat-header-cell>
+    <mat-cell *matCellDef="let item" class="column-status"> {{item.statusText}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="engine">
+    <mat-header-cell *matHeaderCellDef class="column-engine"> Database Engine </mat-header-cell>
+    <mat-cell *matCellDef="let item" class="column-engine"> {{item.engineName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef class="column-description"> Description </mat-header-cell>
+    <mat-cell *matCellDef="let item" class="column-description"> {{item.description}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let item">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <button mat-raised-button color="primary" (click)="onAction('show', item)">More Info</button>
+        <button mat-raised-button color="warn" (click)="onAction('delete', item)">Destroy</button>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="currentColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: currentColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [length]="dataLength" [pageSize]="5" [pageSizeOptions]="[5, 10, 25]">
+</mat-paginator>

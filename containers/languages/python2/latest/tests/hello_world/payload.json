@@ -1,0 +1,8 @@
+{
+  "language": "python2",
+  "files": [{
+    "name": "main.py",
+    "content": "print \"Hello World!\""
+  }]
+}
+

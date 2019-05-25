@@ -1,0 +1,5 @@
+<h2>
+  Database Edit: {{databaseTitle$ | async}}
+</h2>
+
+<app-database-editor [database]="database$ | async" (databaseSave)="onSave($event)"></app-database-editor>

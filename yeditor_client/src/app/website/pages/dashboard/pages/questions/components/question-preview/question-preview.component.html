@@ -1,0 +1,38 @@
+<ng-template #emptyMessage>
+  <div class="preview-empty-message">
+    <h3>
+      Question Library
+    </h3>
+    <a mat-raised-button color="primary" (click)="onClickNewQuestion()">Write New Question</a>
+  </div>
+</ng-template>
+
+<ng-template #previewQuestion let-previewQuestion="previewQuestion">
+  <div class="preview-question">
+    <button mat-button class="back-button" (click)="onClickQuit()">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon>keyboard_arrow_left</mat-icon> <span>Back</span>
+      </div>
+    </button>
+    <div class="preview-header">
+      <h4> {{previewQuestion.title}} </h4>
+      <p class="description"> {{previewQuestion.description}} </p>
+      <p class="meta">
+        {{previewQuestion.language.name}} Created by {{previewQuestion.author}} {{previewQuestion.createTime|amTimeAgo}}
+      </p>
+    </div>
+    <div class="preview-content">
+      <app-monaco-editor #editor (editorDidMount)="onEditorInitialized($event)"></app-monaco-editor>
+    </div>
+  </div>
+  <div class="preview-actions">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <a mat-raised-button color="primary" [routerLink]="['/dashboard/questions/edit', previewQuestion.id]">Edit</a>
+      <a mat-raised-button color="primary" [routerLink]="['/dashboard/pads/create', previewQuestion.id]">Create Pad With Question</a>
+    </div>
+  </div>
+</ng-template>
+
+<ng-container *ngIf="(question$ | async); else emptyMessage">
+  <ng-container [ngTemplateOutlet]="previewQuestion" [ngTemplateOutletContext]="{previewQuestion:(question$ | async)}"></ng-container>
+</ng-container>

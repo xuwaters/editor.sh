@@ -1,0 +1,35 @@
+<div class="container" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-between stretch">
+    <div fxFlex class="split-pane-container">
+      <app-split-pane #rootPane [gutterSize]="2" direction="horizontal" (dragProcess)="doLayout($event)"
+        (gutterDoubleClick)="onSplitGutterReset($event)">
+        <div appSplitArea size="50">
+          <div class="area-header">
+            <app-codepad-editor-header #editorHeader (runCode)="onRunCode()"
+              (languageChange)="onLanguageChangeClicked($event)">
+            </app-codepad-editor-header>
+          </div>
+          <div class="area-content">
+            <div class="area-monaco-editor-container">
+              <app-monaco-editor #editor [options]="editorOptions" (editorDidMount)="onEditorDidMount()">
+              </app-monaco-editor>
+            </div>
+          </div>
+        </div>
+        <div appSplitArea size="50">
+          <div class="area-header">
+            <app-codepad-xterm-header (reset)="onReset()"></app-codepad-xterm-header>
+          </div>
+          <div class="area-content">
+            <div class="area-xterm-container">
+              <app-xterm #xterm (terminalDidMount)="onTerminalDidMount()"></app-xterm>
+            </div>
+          </div>
+        </div>
+      </app-split-pane>
+    </div>
+  </div>
+  <div fxFlex="20px" class="edit-footer">
+    <app-codepad-footer></app-codepad-footer>
+  </div>
+</div>

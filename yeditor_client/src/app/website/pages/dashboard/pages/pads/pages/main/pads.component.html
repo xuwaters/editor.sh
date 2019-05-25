@@ -1,0 +1,10 @@
+<h2>
+  Pads
+</h2>
+<p>
+
+</p>
+
+<app-pad-filter (filterChange)="onPadFilterChange($event)"></app-pad-filter>
+
+<app-pad-table [data]="padsState$ | async" (action)="onPadActionData($event)" (page)="onPadPageEvent($event)"></app-pad-table>

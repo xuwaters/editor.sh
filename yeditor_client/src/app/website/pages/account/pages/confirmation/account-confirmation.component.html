@@ -1,0 +1,19 @@
+<h2>
+  Resend Confirmation
+</h2>
+<p>
+  Didn't get an email to confirm your account? Enter it below and we'll send you another
+  one.
+</p>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlex>
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Email" [(ngModel)]="userEmail">
+    </mat-form-field>
+  </div>
+  <div fxFlex>
+    <button mat-raised-button color="primary" (click)="onConfirmation()"> RESEND CONFIRMATION </button>
+  </div>
+</div>
+
+<app-account-links [showConfirmation]="false"></app-account-links>

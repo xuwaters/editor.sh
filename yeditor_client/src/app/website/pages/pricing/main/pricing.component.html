@@ -1,0 +1,23 @@
+<mat-grid-list cols="4" rowHeight="200">
+  <mat-grid-tile colspan="1"></mat-grid-tile>
+  <mat-grid-tile colspan="2">
+    <h2>
+    </h2>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1"></mat-grid-tile>
+</mat-grid-list>
+
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <app-plan-item *ngFor="let item of planItems" [item]="item"></app-plan-item>
+</div>
+
+<mat-grid-list cols="2" rowHeight="200" gutterSize="20">
+  <mat-grid-tile colspan="2">
+    <h2>Frequently Asked Questions</h2>
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let item of faqItems">
+    <app-faq-item [item]="item"></app-faq-item>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div style="padding-bottom: 100px;"></div>

@@ -1,0 +1,8 @@
+<div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="1px">
+  <div fxFlex="16.5%">
+    <app-sidebar (createPad)="onCreatePad()" (trySandbox)="onTrySandbox()"></app-sidebar>
+  </div>
+  <div fxFlex="83.5%" style="min-height: 800px;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

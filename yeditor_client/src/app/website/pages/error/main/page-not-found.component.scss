@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #343434;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.4rem;
+  padding: 0 71.5px;
+  .page-container {
+    padding-top: 67.5px;
+    height: 100%;
+  }
+  .secondary-text-color {
+    color: #8f84da;
+  }
+  .head-line {
+    font-size: 4.8rem;
+  }
+  .primary-text-color {
+    color: #dadada;
+  }
+  .subhead {
+    transition: color .2s linear;
+    font-size: 36px;
+    line-height: 46px;
+  }
+  hr {
+    height: 1px;
+    border: none;
+    width: 450px;
+    margin: 35px 0;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .buttons-container {
+    margin-top: 45px;
+    overflow: hidden;
+    button {
+      transition: color .2s linear, border-color .2s linear;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgb(204, 204, 204);
+      background-color: transparent;
+      border: 2px solid rgb(204, 204, 204);
+      border-radius: 10px;
+      padding: 10px 30px 10px;
+      display: inline-block;
+    }
+    button:first-child {
+      margin-right: 25px;
+    }
+  }
+  & ::ng-deep .mat-ripple {
+    border-radius: 33px;
+  }
+}

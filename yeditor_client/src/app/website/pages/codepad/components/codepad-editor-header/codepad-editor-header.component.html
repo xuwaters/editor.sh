@@ -1,0 +1,26 @@
+<div class="container" fxLayout="column">
+  <div fxFlex></div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex="10px"></div>
+    <button mat-raised-button color="primary" matTooltip="" matTooltipPosition="below"
+      (click)="onRunClick()">
+      Run
+    </button>
+    <div fxFlex></div>
+    <div fxFlex class="language-select">
+      <button class="btn btn-inverse show-current-language-info" matTooltip="Click for example"
+        matTooltipPosition="below" (click)="showLanguageInfo(language)">
+        Info
+      </button>
+      <button class="btn dropdown-toggle btn-inverse" (click)="showLanguageDialog()">
+        <span class="filter-option">
+           <span id="chosen-language"> {{languageName}} </span>
+        </span>
+        &nbsp;
+        <span class="caret"></span>
+      </button>
+    </div>
+    <div fxFlex="10px"></div>
+  </div>
+  <div fxFlex></div>
+</div>

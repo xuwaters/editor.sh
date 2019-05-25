@@ -1,0 +1,69 @@
+:host {
+  $title-color: #505050;
+  $description-color: #7a8b99;
+  $border-color: #c7d1d9;
+  .preview-empty-message {
+    margin: 160px 135px 0;
+    h3 {
+      color: #22282e;
+    }
+    p {
+      font-size: 1.8rem;
+      color: #4b555e;
+      line-height: 1.6;
+    }
+  }
+  .preview-question {
+    .back-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: transparent;
+      border: 1px solid #c7d1d9;
+      border-width: 0 0 1px 1px;
+      border-bottom-left-radius: 4px;
+      outline: none;
+      font-size: 1.4rem;
+      padding: 1px 8px 1px 2px;
+      line-height: 25px;
+      min-width: 40px;
+      color: #4b555e;
+    }
+    .preview-header {
+      padding: 20px;
+      border-bottom: 1px solid $border-color;
+      h4 {
+        color: $title-color;
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .description {
+        font-size: 1.4rem;
+        line-height: 17px;
+        color: $title-color;
+        margin: 12px 0 5px 0;
+      }
+      .meta {
+        color: $description-color;
+        font-size: 1.0rem;
+        text-transform: uppercase;
+      }
+    }
+    .preview-content {
+      padding: 5px;
+      app-monaco-editor {
+        height: 400px;
+      }
+    }
+  }
+  .preview-actions {
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 75%);
+  }
+}

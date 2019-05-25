@@ -1,0 +1,89 @@
+:host {
+  color: #fff;
+  .invite-dialog-panel {
+    background: #2d353c;
+    width: 310px;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    h4 {
+      color: #f2f5f7;
+      font-weight: normal;
+      font-size: inherit;
+      margin: 0;
+      line-height: 1.5;
+    }
+    p {
+      color: #7a8b99;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+    #invite-email {
+      float: left;
+      width: 240px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      font-size: inherit;
+    }
+    #send-invite {
+      float: right;
+      font-size: 1.4rem;
+      background: #26dbb8;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      height: 32px;
+      width: 70px;
+      min-width: unset;
+      border-radius: 0;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      color: #f2f5f7;
+      outline: 0;
+    }
+    #email-invite-form {
+      display: flex;
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+    .horizontal-separator {
+      display: flex;
+      height: 30px;
+      line-height: 30px;
+      color: #7a8b99;
+      margin: 15px 0;
+      &:before {
+        margin-right: 10px;
+      }
+      &:after {
+        margin-left: 10px;
+      }
+      &:before,
+      &:after {
+        content: ' ';
+        display: inline-block;
+        flex-grow: 1;
+        height: 1px;
+        margin-top: 15px;
+        background: #4b555e;
+      }
+    }
+    input,
+    #short-link {
+      font-family: Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      background: #22282e;
+      width: 100%;
+      box-sizing: border-box;
+      border: 0;
+      outline: 0;
+      padding: 0 0 0 12px;
+      border-radius: 4px;
+      height: 32px;
+      line-height: 32px;
+      color: #f2f5f7;
+      span {
+        color: #7a8b99;
+      }
+    }
+  }
+}

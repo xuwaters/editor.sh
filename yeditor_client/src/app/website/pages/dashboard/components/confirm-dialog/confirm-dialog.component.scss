@@ -1,0 +1,25 @@
+:host {
+  .container {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+  }
+  .container > div {
+    height: 100%;
+  }
+  .container .title {
+    font-size: 1.6rem;
+  }
+  .container .content {
+    font-size: 1.6rem;
+    padding-top: 10px;
+  }
+  .container .actions {
+    border-top: 1px solid #c3bdbd;
+    padding-top: 10px;
+  }
+}

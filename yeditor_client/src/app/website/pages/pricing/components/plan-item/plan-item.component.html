@@ -1,0 +1,17 @@
+<mat-card class="plan-item" [style.border-top]="clsBorderTop">
+  <mat-card-content>
+    <h4>{{item.title}}</h4>
+    <h3>{{item.price}} <span>{{item.period}}</span></h3>
+    <p>
+      {{item.description}}
+    </p>
+    <ul>
+      <li *ngFor="let feature of item.features">{{feature}}</li>
+    </ul>
+  </mat-card-content>
+
+  <mat-card-footer>
+    <a mat-button *ngIf="item.action.link" [routerLink]="item.action.link">{{item.action.name}}</a>
+    <button mat-button *ngIf="item.action.click" (click)="item.action.click()">{{item.action.name}}</button>
+  </mat-card-footer>
+</mat-card>

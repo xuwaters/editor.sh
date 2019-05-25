@@ -1,0 +1,43 @@
+<h2>
+  Settings
+</h2>
+
+<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="40px">
+  <div fxFlex="50%" fxLayout="column" fxLayoutGap="20px">
+    <mat-form-field>
+      <input matInput name="email" placeholder="Email" [(ngModel)]="settingParams.email">
+      <mat-hint *ngIf="fieldErrors.email">{{ fieldErrors.email }}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="name" placeholder="Name" [(ngModel)]="settingParams.name">
+      <mat-hint *ngIf="fieldErrors.name">{{ fieldErrors.name }}</mat-hint>
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="settingParams.pads_private">
+      Make my pads private by default
+    </mat-checkbox>
+
+    <mat-checkbox [(ngModel)]="settingParams.code_execution">
+      Enable code execution on my pads by default
+    </mat-checkbox>
+
+    <app-language-selector placeholder="Default Language" [selectedLanguage]="settingParams.language"
+      (languageChanged)="onLanguageChanged($event)">
+    </app-language-selector>
+
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+    </div>
+  </div>
+  <div fxFlex="50%">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+      <mat-form-field fxFlex="80%">
+        <input matInput name="name" placeholder="API Key" [ngModel]="settingParams.api_key" readonly>
+      </mat-form-field>
+      <div fxFlex="20%">
+        <button mat-raised-button color="warn" (click)="onRefreshApiKey()">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>

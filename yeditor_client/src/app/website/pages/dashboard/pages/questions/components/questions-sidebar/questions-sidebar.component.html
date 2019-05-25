@@ -1,0 +1,35 @@
+<div>
+  <div class="questions-search">
+    <app-search-box></app-search-box>
+  </div>
+  <mat-nav-list>
+
+    <ng-template #header let-title="title">
+      <h3 mat-subheader>{{title}}</h3>
+      <mat-divider></mat-divider>
+    </ng-template>
+
+    <ng-template #itemlist let-items="items">
+      <ng-container *ngFor="let item of items">
+        <mat-list-item [ngClass]="item.id == (selectedQuestionId$ | async) ? 'selected' : ''"
+          (click)="onSelectQuestion(item)">
+          <h4 mat-line>{{item.title}}</h4>
+          <p mat-line class="description">{{item.description}}</p>
+          <p mat-line class="meta">{{item.language.name}} <span>· by {{item.author}} </span></p>
+          <span (click)="onClickStar(item, $event)" class="star" [ngClass]="item.favorite ? 'filled' : 'empty'"
+            title="Remove this question from your favourites."></span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </ng-template>
+
+    <ng-container *ngIf="hasFavorites$ | async">
+      <ng-container [ngTemplateOutlet]="header" [ngTemplateOutletContext]="{title:'YOUR FAVORITES'}"></ng-container>
+      <ng-container [ngTemplateOutlet]="itemlist" [ngTemplateOutletContext]="{items:(favoriteQuestions$ | async)}"></ng-container>
+    </ng-container>
+
+    <ng-container [ngTemplateOutlet]="header" [ngTemplateOutletContext]="{title:'YOUR QUESTIONS'}"></ng-container>
+    <ng-container [ngTemplateOutlet]="itemlist" [ngTemplateOutletContext]="{items:(normalQuestions$ | async)}"></ng-container>
+
+  </mat-nav-list>
+</div>
