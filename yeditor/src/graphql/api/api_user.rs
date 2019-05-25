@@ -358,26 +358,27 @@ fn mutation_user_oauth_login(
     //   "updated_at": String,
     //   "url": String
 
-    let user_email_value = &github_user["email"];
+    let user_login_value = &github_user["login"];
     let user_name_value = &github_user["name"];
 
     let user_name = user_name_value.as_str().unwrap_or("").to_owned();
-    let user_email = match user_email_value.as_str() {
+    // use login instead of email (email may not be availabe)
+    let user_login = match user_login_value.as_str() {
         None => {
-            info!("email not found in user information");
+            info!("login not found in user information");
             return Err(FieldError::new(
-                "invalid_email",
-                graphql_value!({"user": "invalid_user_email"}),
+                "invalid_login",
+                graphql_value!({"user": "invalid_user_login"}),
             ));
         }
-        Some(val) => val.to_owned(),
+        Some(val) => format!("{}@github", val),
     };
 
     // save or update user information in database
     let dao: &db::ApiDao = &ctx.dao;
     let user = dao
         .user
-        .create_user_by_oauth(&user_email, &user_name)?;
+        .create_user_by_oauth(&user_login, &user_name)?;
     let session = dao.user.create_user_session(&user)?;
 
     Ok(ApiLoggedInUser {
