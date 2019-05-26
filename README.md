@@ -6,6 +6,13 @@ A complete runnable example about [`Angular`](https://angular.io/), [`NgRx`](htt
 
 For a live preview: https://editor.sh
 
+## Demo ScreenShots
+
+![Collaborative Editing](./docs/images/demo-01.gif)
+
+![Database Operation](./docs/images/demo-02.gif)
+
+
 ## Bird's-eye View
 
 ```
@@ -167,6 +174,7 @@ vb
 - Separate `room server` and `api server`, add a load balancer in front of room server, routing by `room_hash`.
 - Make `room server` stateless.
 - Add cache layer for `database`.
+- Language server integration.
 
 ## Contribution
 
